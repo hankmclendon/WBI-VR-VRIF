@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
+  m_Name: Task_Section_Success
+  m_EditorClassIdentifier: 
+  title: Great Job!
+  copy: All tasks complete. You killed it!
+  buttonOneText: Done
+  buttonTwoText: 
+  voiceOver: {fileID: 8300000, guid: 92e314b5151d76d4681f9b22ea402fef, type: 3}

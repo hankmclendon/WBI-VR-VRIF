@@ -1,0 +1,260 @@
+fileFormatVersion: 2
+guid: a519fe07f1c2fe54bb23e4efe7b67652
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_AircraftPull_Vehicle
+    second: {fileID: 2100000, guid: fc41e441f5ada4549a698ad9ce601f32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Aircraft_Body
+    second: {fileID: 2100000, guid: b812b399816df304792d0ea40a88cc56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Aircraft_CrewCabin
+    second: {fileID: 2100000, guid: cf72235a34d63fa4c87bfdd4f605a2c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Aircraft_Glass
+    second: {fileID: 2100000, guid: a675a7cb7bdaa034a8a2868240871c4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Aircraft_Interior
+    second: {fileID: 2100000, guid: 9d85a35204647a24faf7836c26465ece, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Aircraft_Interior_Part02
+    second: {fileID: 2100000, guid: f1f059a80753c624fab4dbc13bf3bbf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Aircraft_Propeller
+    second: {fileID: 2100000, guid: de5f8bd60e24a2544b28466b6b49e040, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Aircraft_Vehicle02
+    second: {fileID: 2100000, guid: 494159504e43ff84fb49b205c07ff388, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Base_Beam
+    second: {fileID: 2100000, guid: 37a85e8e292988d4cb7c8e090f429604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Beam06
+    second: {fileID: 2100000, guid: 10ca6db2eaf25f64b913f55f38e4243f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Beam07
+    second: {fileID: 2100000, guid: def6cf6238d7d5d4c987df58ad93a864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Box
+    second: {fileID: 2100000, guid: f45f7a3d09bf6ce4083fe61211d0bb70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Ceiling_Pipe
+    second: {fileID: 2100000, guid: fbd63687ccf3f7943892366dbe7d648f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Door
+    second: {fileID: 2100000, guid: c6d56cfeef0c31b4797ea910c8b70484, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Drum
+    second: {fileID: 2100000, guid: c349863f81c134f4f8fe740065bc165c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Floor
+    second: {fileID: 2100000, guid: 608ee2925589df240adab5d70455011d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Gerenrator
+    second: {fileID: 2100000, guid: bb6d955e5665fa14298fc8da35fedf08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Ladder_01
+    second: {fileID: 2100000, guid: 7e2e6e9438eb68e4a952544f02074d7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Ladder_02
+    second: {fileID: 2100000, guid: 97366ccdb4e76b64bb49ebbeed9ab25d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Metal_Rope
+    second: {fileID: 2100000, guid: 7c2e4ffb3e2237c4e997ac54f747c0ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Pipe_01
+    second: {fileID: 2100000, guid: bbe2fb82dca00e2478b63cd352dc31da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Railing_Left
+    second: {fileID: 2100000, guid: 1962cdd4092d74a42a60d291fe994403, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Railing_Right
+    second: {fileID: 2100000, guid: e10b0b96d0db4d645a5ddee30c4a44d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Roof
+    second: {fileID: 2100000, guid: 51ca6373c75e89a48b888de37ac97b77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Roof_Beam
+    second: {fileID: 2100000, guid: 8f13ac429b93c78419c252b50a0a29f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Room
+    second: {fileID: 2100000, guid: 157d2f93bb0042748a46446b5fb27c2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Sky
+    second: {fileID: 2100000, guid: b251bbf57fbb5b341b40b0e757a37d1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Vent
+    second: {fileID: 2100000, guid: 36cb628e57e05a64f88140cdef52ef29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Wall
+    second: {fileID: 2100000, guid: 8735b15b9e35e54419dafb4bf781580c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_WallPillar01
+    second: {fileID: 2100000, guid: 6b8f7d8e503670f488e04edd383784d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_Wires
+    second: {fileID: 2100000, guid: 513668e7bcbbfc04587d7c2404ecbdd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hangar_WoodenCart
+    second: {fileID: 2100000, guid: cf65e197b295a534298213015afc7564, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
