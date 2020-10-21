@@ -28,9 +28,16 @@ namespace Sinthetik.MissionControl
 
         public Sprite normalSprite;
         public Sprite outlineSprite;
-        
+        public bool showPanel;
+        public GameObject displayPanel;
 
         private List<DebugButton> buttonList = new List<DebugButton>();
+
+        void Awake()
+        {
+            displayPanel = transform.Find("DisplayPanel").gameObject;
+            displayPanel.SetActive(showPanel);
+        }
 
         public void UpdateMission(string missionName)
         {

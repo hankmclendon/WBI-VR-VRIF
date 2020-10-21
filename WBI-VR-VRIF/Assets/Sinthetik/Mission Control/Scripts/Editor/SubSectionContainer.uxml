@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="container" class="subsection-border" style="margin-bottom: 10px;">
+        <Style src="MissionControl.uss" />
+        <ui:VisualElement name="header" class="subsection-header" style="flex-direction: row;">
+            <ui:Label text="Section" display-tooltip-when-elided="True" name="containerLabel" class="item-label container-label" style="padding-left: 6px; padding-right: 6px; padding-top: 2px; padding-bottom: 2px;" />
+            <ui:TextField picking-mode="Ignore" value="filler text" text="Name" name="nameTextField" style="flex-grow: 1;" />
+            <ui:Button text="Delete" display-tooltip-when-elided="True" name="deleteButton" style="margin-left: 4px; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+            <ui:Button text="u" display-tooltip-when-elided="True" name="upButton" style="margin-left: 4px; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+            <ui:Button text="d" display-tooltip-when-elided="True" name="downButton" style="margin-left: 4px; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        </ui:VisualElement>
+        <ui:Foldout name="listFoldout" class="section-foldout">
+            <ui:VisualElement name="listSlot" style="margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px;" />
+        </ui:Foldout>
+        <ui:Button display-tooltip-when-elided="True" name="newButton" text="New Module" class="subsection-newbutton" />
+        <ui:Foldout name="outcomeFoldout" class="unity-foldout__content">
+            <ui:VisualElement class="subsection-optionbar" style="flex-direction: row;">
+                <ui:Toggle name="successToggle" style="margin-left: 6px; margin-right: 6px; margin-top: 6px; margin-bottom: 6px;" />
+                <ui:Label text="Success" display-tooltip-when-elided="True" style="-unity-text-align: middle-left;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="successSlot" class="listSlot" />
+            <ui:VisualElement class="subsection-optionbar" style="flex-direction: row;">
+                <ui:Toggle name="failToggle" style="margin-left: 6px; margin-right: 6px; margin-top: 6px; margin-bottom: 6px;" />
+                <ui:Label text="Fail" display-tooltip-when-elided="True" style="-unity-text-align: middle-left;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="failSlot" class="listSlot" />
+        </ui:Foldout>
+    </ui:VisualElement>
+</ui:UXML>

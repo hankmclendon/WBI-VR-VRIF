@@ -17,7 +17,7 @@ namespace Sinthetik.MissionControl
 
         void Awake()
         {
-            timeText = gameObject.transform.Find("Text").GetComponent<Text>();
+            timeText = gameObject.transform.Find("DisplayPanel").gameObject.transform.Find("Text").GetComponent<Text>();
         }
 
         public void StartTimer(float timeout)

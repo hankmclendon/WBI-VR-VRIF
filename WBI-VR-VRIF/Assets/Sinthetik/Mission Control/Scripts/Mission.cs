@@ -159,9 +159,11 @@ namespace Sinthetik.MissionControl
         private void ActivateModule()
         {
             // set mission name for debug panel
-            debug.UpdateMission(missionName);
+            if(debug.showPanel)
+                debug.UpdateMission(missionName);
             // update the heirarchy for the debug panel display
-            debug.DrawList(currentSectionList, currentSection, currentSubSection, currentModule);
+            if (debug.showPanel)
+                debug.DrawList(currentSectionList, currentSection, currentSubSection, currentModule);
 
             // Dialogue
             if (currentModule.moduleType == Module.ModuleType.Dialogue)
@@ -180,12 +182,12 @@ namespace Sinthetik.MissionControl
             else if (currentModule.moduleType == Module.ModuleType.Trigger)
             {
                 Trigger currentTrigger = currentModule.destinationTrigger.GetComponent<Trigger>();
-                currentTrigger.isActive = true;
+                currentTrigger.Activate();
             }
             // Activity
             else if (currentModule.moduleType == Module.ModuleType.Activity)
             {
-                currentModule.missionActivity.GetComponent<MissionActivity>().isActive = true;
+                currentModule.missionActivity.GetComponent<MissionActivity>().Activate();
             }
             // Timer
             else if (currentModule.moduleType == Module.ModuleType.Timer)

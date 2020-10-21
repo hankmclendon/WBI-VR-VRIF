@@ -23,7 +23,7 @@ namespace Sinthetik.MissionControl
             foreach(SubSection subSection in currentList)
             {
                 GameObject menuItem = Instantiate(menuItemPrefab);
-                menuItem.transform.SetParent(gameObject.transform);
+                menuItem.transform.SetParent(gameObject.transform, false);
                 menuItem.transform.GetChild(0).GetComponent<Text>().text = subSection.name;
                 Button button = menuItem.transform.GetChild(1).GetComponent<Button>();
                 if(!subSection.isComplete && !subSection.deactivated)

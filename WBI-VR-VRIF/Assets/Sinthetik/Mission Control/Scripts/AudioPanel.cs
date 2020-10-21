@@ -8,15 +8,18 @@ namespace Sinthetik.MissionControl
 {
     public class AudioPanel : MonoBehaviour
     {
+        public bool showPanel;
         private AudioSource audioSource;
         private IEnumerator audioCoroutine;
         private AudioClip audioClip;
+        private GameObject displayPanel;
 
         public static event System.Action<AudioClip> audioComplete;
 
         void Awake()
         {
             audioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+            displayPanel = transform.Find("DisplayPanel").gameObject;
         }
         public void PlayAudio(AudioClip audioClip)
         {
@@ -27,6 +30,7 @@ namespace Sinthetik.MissionControl
             audioSource.Play();
             audioCoroutine = AudioCallback(clipLength);
             gameObject.SetActive(true);
+            displayPanel.SetActive(showPanel);
             StartCoroutine(audioCoroutine);
         }
         private IEnumerator AudioCallback(float clipLength)

@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="mission" class="mission-border">
+        <Style src="MissionControl.uss" />
+        <ui:VisualElement name="header" class="mission-header" style="flex-direction: row; border-left-color: rgb(43, 85, 154); border-right-color: rgb(43, 85, 154); border-top-color: rgb(43, 85, 154); border-bottom-color: rgb(43, 85, 154); border-bottom-width: 4px;">
+            <ui:Label text="Mission" display-tooltip-when-elided="True" name="containerLabel" class="container-label" style="padding-left: 6px; padding-right: 6px; padding-top: 2px; padding-bottom: 2px;" />
+            <ui:TextField picking-mode="Ignore" value="filler text" text="Name" name="nameTextField" style="flex-grow: 1; -unity-text-align: middle-left;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="listSlot" class="listSlot" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        <ui:Button text="New Section" display-tooltip-when-elided="True" name="newButton" />
+        <ui:Foldout name="outcomeFoldout" class="unity-foldout__content">
+            <ui:VisualElement class="section-optionbar" style="flex-direction: row;">
+                <ui:Toggle name="successToggle" style="margin-left: 6px; margin-right: 6px; margin-top: 6px; margin-bottom: 6px;" />
+                <ui:Label text="End Of Game" display-tooltip-when-elided="True" style="-unity-text-align: middle-left;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="endSlot" class="listSlot" />
+        </ui:Foldout>
+    </ui:VisualElement>
+</ui:UXML>
