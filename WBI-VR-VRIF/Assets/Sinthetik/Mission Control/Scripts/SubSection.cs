@@ -8,6 +8,7 @@ namespace Sinthetik.MissionControl
     public class SubSection
     {
         public List<Module> subList = new List<Module>();
+        public SubSectionData data;
         public string name;
         public bool foldoutState = true;
         public bool outcomeFoldoutState = false;

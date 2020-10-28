@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5da92a550e7b842afb9975a9061fd7, type: 3}
+  m_Name: Task05_CheckSoftware_SectionData
+  m_EditorClassIdentifier: 
+  name: Mission 05
+  title: Check For Software Updates
+  titleImage: {fileID: 21300000, guid: 01c5fd2a3c7036342940be8631a75c03, type: 3}
+  descriptionCopy: Our target is known for cyber attacks. Go to the cockpit and make
+    sure all of our systems software is updated to eliminate vulnerabilities.
+  despriptionImage: {fileID: 0}
+  descriptionAudio: {fileID: 0}
+  buttonTitle: 
+  buttonNormal: {fileID: 21300000, guid: 31a548686ed08854fac8e0b223191de0, type: 3}
+  buttonRollover: {fileID: 21300000, guid: 2b6a96cad71621c40b7c929ce53d1165, type: 3}
+  buttonSelected: {fileID: 21300000, guid: 4579385f8eac9a0429c615296166b318, type: 3}
+  locator: {x: 261, y: -79, z: 0}

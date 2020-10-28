@@ -1,4 +1,4 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
     <ui:VisualElement name="container" class="subsection-border" style="margin-bottom: 10px;">
         <Style src="MissionControl.uss" />
         <ui:VisualElement name="header" class="subsection-header" style="flex-direction: row;">
@@ -7,6 +7,9 @@
             <ui:Button text="Delete" display-tooltip-when-elided="True" name="deleteButton" style="margin-left: 4px; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
             <ui:Button text="u" display-tooltip-when-elided="True" name="upButton" style="margin-left: 4px; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
             <ui:Button text="d" display-tooltip-when-elided="True" name="downButton" style="margin-left: 4px; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="optionRow" class="subsection-optionbar" style="flex-direction: column; align-items: stretch;">
+            <uie:ObjectField label="Data" name="dataObjectField" style="margin-left: 6px; margin-right: 6px; margin-top: 6px; margin-bottom: 6px;" />
         </ui:VisualElement>
         <ui:Foldout name="listFoldout" class="section-foldout">
             <ui:VisualElement name="listSlot" style="margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px;" />

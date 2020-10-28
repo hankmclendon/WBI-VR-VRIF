@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5da92a550e7b842afb9975a9061fd7, type: 3}
+  m_Name: Task07_MissionProfile_SectionData
+  m_EditorClassIdentifier: 
+  name: Mission 07
+  title: Load Your Mission Profile
+  titleImage: {fileID: 21300000, guid: b1f2b54ade123bc4489a01227d06bd5e, type: 3}
+  descriptionCopy: "While we\u2019re prepping the plane, our pilots are \x03preparing
+    for action. Go to the flight simulator \x03and load up the mission profile so
+    it\u2019s ready to go."
+  despriptionImage: {fileID: 0}
+  descriptionAudio: {fileID: 0}
+  buttonTitle: 
+  buttonNormal: {fileID: 21300000, guid: 7cb8dd8ffb2a3274799232609c555ec7, type: 3}
+  buttonRollover: {fileID: 21300000, guid: 751bc86f84677e641b933370bd4cd536, type: 3}
+  buttonSelected: {fileID: 21300000, guid: 6e6b19c0ac00e87448f8cd8b9508f00f, type: 3}
+  locator: {x: 440, y: -370, z: 0}

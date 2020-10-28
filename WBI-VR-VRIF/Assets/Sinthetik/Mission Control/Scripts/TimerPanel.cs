@@ -30,6 +30,7 @@ namespace Sinthetik.MissionControl
         public void StopTimer()
         {
             isRunning = false;
+            gameObject.SetActive(false);
         }
 
         void Update()
@@ -47,6 +48,7 @@ namespace Sinthetik.MissionControl
                     timerComplete?.Invoke();
                     timeRemaining = 0;
                     isRunning = false;
+                    gameObject.SetActive(false);
                 }
             }
         }

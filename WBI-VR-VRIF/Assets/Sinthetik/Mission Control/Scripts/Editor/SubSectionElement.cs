@@ -13,6 +13,11 @@ namespace Sinthetik.MissionControl
         public SubSectionElement(BaseSectionElement parentElement, MissionEditor editor, SerializedObject serializedObject, SerializedProperty listItem, int index) : base(editor, serializedObject, listItem, index)
         {
             this.parentElement = parentElement;
+
+            ObjectField dataObjectField = this.Query<ObjectField>("dataObjectField").First();
+            dataObjectField.objectType = typeof(SubSectionData);
+            SerializedProperty subSectionData = listItem.FindPropertyRelative("data");
+            dataObjectField.BindProperty(subSectionData);
         }
         public override void SetContainer()
         {

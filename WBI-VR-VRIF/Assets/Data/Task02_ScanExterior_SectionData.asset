@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5da92a550e7b842afb9975a9061fd7, type: 3}
+  m_Name: Task02_ScanExterior_SectionData
+  m_EditorClassIdentifier: 
+  name: Mission 02
+  title: Scan Exterior for Damage
+  titleImage: {fileID: 21300000, guid: c5102ea9ddf8bc14ca86238e39412854, type: 3}
+  descriptionCopy: The plane may be damaged from the last mission. Use inspection
+    equipment to find any flaws, particularly around the cargo bay.
+  despriptionImage: {fileID: 0}
+  descriptionAudio: {fileID: 0}
+  buttonTitle: 
+  buttonNormal: {fileID: 21300000, guid: bfd1e5b24c563754b847ee59b663fc91, type: 3}
+  buttonRollover: {fileID: 21300000, guid: d8554bae73ab2e84999c08eb9a803d86, type: 3}
+  buttonSelected: {fileID: 21300000, guid: 879999b598570fc478b985a8cf24f617, type: 3}
+  locator: {x: 206, y: -278, z: 0}
