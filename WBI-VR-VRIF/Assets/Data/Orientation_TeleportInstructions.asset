@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
-  m_Name: Task01_Calibrate_Instructions_1
+  m_Name: Orientation_TeleportInstructions
   m_EditorClassIdentifier: 
-  title: Calibrate RF Sensors
-  copy: "Head to the front of the plane. \nYou'll have 60 seconds to complete this
-    task."
-  buttonOneText: Start
+  title: Teleport Controls
+  copy: Push forward on your left thumb joystick to see a teleport location. Let
+    go to teleport. When you get the hang of it hit next and head to the briefing
+    station.
+  buttonOneText: Next
   buttonTwoText: 
-  backgroundImage: {fileID: 21300000, guid: cc0f7b1b43bd10a4a974572c8d3dae3d, type: 3}
-  voiceOver: {fileID: 8300000, guid: 663bbe94083a86949ab1e9aad2ead3ac, type: 3}
+  backgroundImage: {fileID: 21300000, guid: 1acf7b5c53114b5498e507595be754fd, type: 3}
+  voiceOver: {fileID: 0}

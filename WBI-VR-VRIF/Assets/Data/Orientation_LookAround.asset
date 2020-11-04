@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Orientation_LookAround
   m_EditorClassIdentifier: 
   title: Look Around
-  copy: Look around the environement. Push left or right on your right hand joystick
-    to rotate more quickly.
-  buttonOneText: 
+  copy: Use your right thumb joystick to rotate left and right. Hit next when you're
+    ready to move on.
+  buttonOneText: Next
   buttonTwoText: 
+  backgroundImage: {fileID: 21300000, guid: 513d8567a3239ac4094a3e8ecf6decb2, type: 3}
   voiceOver: {fileID: 0}

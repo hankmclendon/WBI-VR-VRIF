@@ -17,6 +17,8 @@ namespace Sinthetik.MissionControl
         public Sprite buttonNormal;
         public Sprite buttonRollover;
         public Sprite buttonSelected;
+        public Sprite buttonCompleted;
+        public Sprite buttonFailed;
         public Vector3 locator;
     }
 }

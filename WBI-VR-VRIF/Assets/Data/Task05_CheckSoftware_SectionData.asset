@@ -23,4 +23,6 @@ MonoBehaviour:
   buttonNormal: {fileID: 21300000, guid: 31a548686ed08854fac8e0b223191de0, type: 3}
   buttonRollover: {fileID: 21300000, guid: 2b6a96cad71621c40b7c929ce53d1165, type: 3}
   buttonSelected: {fileID: 21300000, guid: 4579385f8eac9a0429c615296166b318, type: 3}
+  buttonCompleted: {fileID: 21300000, guid: 15fdbdd1b054b6244992f8a5778efb89, type: 3}
+  buttonFailed: {fileID: 21300000, guid: 3cc2ee7bf05e17e48bb6966d3c6f8524, type: 3}
   locator: {x: 261, y: -79, z: 0}

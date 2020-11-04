@@ -11,6 +11,7 @@ namespace Sinthetik.MissionControl
         public string copy;
         public string buttonOneText;
         public string buttonTwoText;
+        public Sprite backgroundImage;
         public AudioClip voiceOver;
 
     }

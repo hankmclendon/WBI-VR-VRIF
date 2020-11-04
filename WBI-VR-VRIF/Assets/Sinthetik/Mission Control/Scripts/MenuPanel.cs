@@ -23,6 +23,8 @@ namespace Sinthetik.MissionControl
 
         public void BuildMenu(List<SubSection> currentList)
         {
+            bool currentlySelected = true;
+
             foreach (Transform child in buttonPanel.transform)
             {
                 Destroy(child.gameObject);
@@ -38,26 +40,35 @@ namespace Sinthetik.MissionControl
                 Image image = menuItem.GetComponent<Image>();
                 image.sprite = subSection.data.buttonNormal;
 
-                SpriteState _spriteState = new SpriteState();
-                _spriteState.highlightedSprite = subSection.data.buttonRollover;
-                _spriteState.selectedSprite = subSection.data.buttonSelected;
-                button.spriteState = _spriteState;
+                if (!subSection.isComplete && !subSection.deactivated)
+                {
+                    SpriteState _spriteState = new SpriteState();
+                    _spriteState.highlightedSprite = subSection.data.buttonRollover;
+                    _spriteState.selectedSprite = subSection.data.buttonSelected;
+                    button.spriteState = _spriteState;
 
-                button.onClick.AddListener(() => ItemSelected(subSection));
-
-                //if (!subSection.isComplete && !subSection.deactivated)
-                //{
-                //    button.onClick.AddListener(() => ItemSelected(subSection));
-                //}
-                //else if (subSection.deactivated)
-                //{
-                //    button.interactable = false;
-                //    menuItem.transform.GetChild(0).GetComponent<Text>().text = "Deactivated";
-                //}
-                //else
-                //{
-                //    button.interactable = false;
-                //}
+                    button.onClick.AddListener(() => ItemSelected(subSection));
+                    if (currentlySelected)
+                    {
+                        button.Select();
+                        ItemSelected(subSection);
+                        currentlySelected = false;
+                    }
+                }
+                else if (subSection.isComplete && !subSection.deactivated)
+                {
+                    button.interactable = false;
+                    SpriteState _spriteState = new SpriteState();
+                    _spriteState.disabledSprite = subSection.data.buttonCompleted;
+                    button.spriteState = _spriteState;
+                }
+                else 
+                {
+                    button.interactable = false;
+                    SpriteState _spriteState = new SpriteState();
+                    _spriteState.disabledSprite = subSection.data.buttonFailed;
+                    button.spriteState = _spriteState;
+                }
             }
             activateButton.onClick.AddListener(() => StartMission(currentSubSection));
         }
