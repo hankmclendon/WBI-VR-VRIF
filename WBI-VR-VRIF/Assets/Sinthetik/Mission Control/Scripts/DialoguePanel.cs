@@ -20,6 +20,11 @@ namespace Sinthetik.MissionControl
         private IEnumerator audioCoroutine;
         public static UnityAction dialogueClose;
 
+        // these events are exposed on the editor and allow for any method on any object to be called when the active status changes
+        // this allows the system to hook into any custom events throughout the game
+        public UnityEvent panelOpenEvent;
+        public UnityEvent panelCloseEvent;
+
         void Awake()
         {
             audioSystem = (AudioPanel)FindObjectOfType<AudioPanel>();
@@ -57,7 +62,6 @@ namespace Sinthetik.MissionControl
                 image.color = new Color(1, 1, 1, 0);
             }
                 
-
             gameObject.SetActive(true);
 
             if(currentData.voiceOver != null)
@@ -70,6 +74,8 @@ namespace Sinthetik.MissionControl
             {
                 EnableButton();
             }
+
+            panelOpenEvent?.Invoke();
         }
         private void EnableButton()
         {
@@ -85,6 +91,7 @@ namespace Sinthetik.MissionControl
         {
             gameObject.SetActive(false);
             dialogueClose?.Invoke();
+            panelCloseEvent?.Invoke();
         }
         public void Skip()
         {

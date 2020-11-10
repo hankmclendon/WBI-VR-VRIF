@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.Audio;
 using UnityEditor;
+using BNG;
 
 namespace Sinthetik.MissionControl
 {
@@ -49,6 +50,10 @@ namespace Sinthetik.MissionControl
         int sectionCount = 0;
         int subSectionCount = 0;
         int moduleCount = 0;
+
+        // player controller
+        private BNGPlayerController playerController;
+        private LocomotionManager locomotionManager;
 
         #endregion
 
@@ -105,6 +110,8 @@ namespace Sinthetik.MissionControl
             audioSystem = audioPanel.GetComponent<AudioPanel>();
             choice = choicePanel.GetComponent<ChoicePanel>();
             instructional = instructionalPanel.GetComponent<InstructionalPanel>();
+            //playerController = GameObject.Find("PlayerController").GetComponent<BNGPlayerController>();
+            //locomotionManager = GameObject.Find("PlayerController").GetComponent<LocomotionManager>();
 
             // deactivate panels
             dialoguePanel.SetActive(false);
@@ -217,6 +224,7 @@ namespace Sinthetik.MissionControl
         {
             menuPanel.SetActive(true);
             menu.BuildMenu(currentSubSectionList);
+            //locomotionManager.enabled = false;
         }
         // then that menu will use this method to set the desired SubSection
         private void SetSubSection(SubSection subSection)
@@ -231,6 +239,7 @@ namespace Sinthetik.MissionControl
                     ActivateModule();
                 }
             }
+
         }
         private void ActivateFail()
         {

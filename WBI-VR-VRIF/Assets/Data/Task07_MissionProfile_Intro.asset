@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
-  m_Name: Task01_Calibrate_Instructions_1
+  m_Name: Task07_MissionProfile_Intro
   m_EditorClassIdentifier: 
-  title: Calibrate RF Sensors
-  copy: "Head to the front of the plane. \nYou'll have 60 seconds to complete this
-    task."
+  title: Instructions
+  copy: Load mission profile!
   buttonOneText: Start
   buttonTwoText: 
-  backgroundImage: {fileID: 21300000, guid: cc0f7b1b43bd10a4a974572c8d3dae3d, type: 3}
-  voiceOver: {fileID: 8300000, guid: 663bbe94083a86949ab1e9aad2ead3ac, type: 3}
+  backgroundImage: {fileID: 0}
+  voiceOver: {fileID: 8300000, guid: 0e75833bed91cf648a0d41a56e294d84, type: 3}

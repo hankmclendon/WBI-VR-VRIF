@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
-  m_Name: Task02_ScanExterior_Instructions_1
+  m_Name: Task02_ScanExterior_Intro
   m_EditorClassIdentifier: 
   title: Scan for damage
   copy: 'Here we show some stuff or it can just be audio. Either way, we need to
@@ -21,4 +21,5 @@ MonoBehaviour:
     we need to tell them they''re being timed and why.'
   buttonOneText: Go
   buttonTwoText: 
-  voiceOver: {fileID: 8300000, guid: 0292577fa32fa464d9d7f7dfff2840ab, type: 3}
+  backgroundImage: {fileID: 0}
+  voiceOver: {fileID: 8300000, guid: a9bb497947e22b64381e1e54092d8f08, type: 3}
