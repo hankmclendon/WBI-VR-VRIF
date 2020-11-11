@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Sinthetik.MissionControl
 {
     public class TimerPanel : MonoBehaviour
     {
-        private Text timeText;
+        private TextMeshProUGUI timeText;
         private float timeRemaining;
         private bool isRunning = false;
 
@@ -17,7 +18,7 @@ namespace Sinthetik.MissionControl
 
         void Awake()
         {
-            timeText = gameObject.transform.Find("DisplayPanel").gameObject.transform.Find("Text").GetComponent<Text>();
+            timeText = gameObject.transform.Find("DisplayPanel").gameObject.transform.Find("Text").GetComponent<TextMeshProUGUI>();
         }
 
         public void StartTimer(float timeout)
@@ -56,10 +57,12 @@ namespace Sinthetik.MissionControl
         {
             timeToDisplay += 1;
 
-            float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
-            float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+            TimeSpan t = TimeSpan.FromSeconds(timeToDisplay);
+
+            //float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
+            //float seconds = Mathf.FloorToInt(timeToDisplay % 60);
             
-            timeText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+            timeText.text = "00 " + string.Format("{0:00} {1:00}", t.Minutes, t.Seconds);
         }
     }
 }
