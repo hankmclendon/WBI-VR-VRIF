@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
   m_Name: Task04_CheckVitals_Intro
   m_EditorClassIdentifier: 
-  title: Instructions
-  copy: Check vitals!
+  title: Check your vitals
+  copy: 
   buttonOneText: Start
   buttonTwoText: 
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: d95b26b4e40603742b277e374dfcc6de, type: 3}
   voiceOver: {fileID: 8300000, guid: 8e4ade102137e254e8bb074a2c19ce16, type: 3}

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
   m_Name: Task06_WingMounts_Intro
   m_EditorClassIdentifier: 
-  title: Instructions
-  copy: Tighten bolts!
+  title: Secure Wing Mounts
+  copy: 
   buttonOneText: Start
   buttonTwoText: 
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 366be2024601adf4c98097fe9ab4d99b, type: 3}
   voiceOver: {fileID: 8300000, guid: 6a41bd1d7cb6be645b8518d839d993ca, type: 3}

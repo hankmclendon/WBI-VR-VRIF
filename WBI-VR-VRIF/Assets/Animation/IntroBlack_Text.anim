@@ -342,35 +342,40 @@ AnimationClip:
   - time: 1
     functionName: PlayAudio
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 8300000, guid: cf4ad1daca139eb4a871c26ef72aa14b,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.1666666
     functionName: PlayAudio
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 8300000, guid: cf4ad1daca139eb4a871c26ef72aa14b,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 4.5
     functionName: PlayAudio
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 8300000, guid: cf4ad1daca139eb4a871c26ef72aa14b,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 5.5
     functionName: PlayAudio
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 8300000, guid: cf4ad1daca139eb4a871c26ef72aa14b,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 6.5
     functionName: PlayAudio
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 8300000, guid: cf4ad1daca139eb4a871c26ef72aa14b,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

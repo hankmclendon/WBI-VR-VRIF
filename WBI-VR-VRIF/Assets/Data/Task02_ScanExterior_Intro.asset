@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: Task02_ScanExterior_Intro
   m_EditorClassIdentifier: 
   title: Scan for damage
-  copy: 'Here we show some stuff or it can just be audio. Either way, we need to
-    be more explicit where they need to go and to look for a shimmering highlight.
-
-
-    Also,
-    we need to tell them they''re being timed and why.'
-  buttonOneText: Go
+  copy: 
+  buttonOneText: Start
   buttonTwoText: 
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 70e98f6aaf0a32d44b1a87e82d3ef6a0, type: 3}
   voiceOver: {fileID: 8300000, guid: a9bb497947e22b64381e1e54092d8f08, type: 3}

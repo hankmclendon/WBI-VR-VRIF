@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
   m_Name: Task03_CheckWires_Intro
   m_EditorClassIdentifier: 
-  title: Instructions
-  copy: Check wires!
+  title: Check Wire Configuration
+  copy: 
   buttonOneText: Start
   buttonTwoText: 
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: d9a41f21b6aeeae42a74e6b041a5f2ac, type: 3}
   voiceOver: {fileID: 8300000, guid: 2a04ebf3e63ba4348adc651222520ec9, type: 3}

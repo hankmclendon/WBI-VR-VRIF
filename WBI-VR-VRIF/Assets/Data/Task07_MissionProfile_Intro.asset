@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
   m_Name: Task07_MissionProfile_Intro
   m_EditorClassIdentifier: 
-  title: Instructions
-  copy: Load mission profile!
+  title: Load Mission Profile
+  copy: 
   buttonOneText: Start
   buttonTwoText: 
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 80308a9a405d55641adc6e4b190fa6d2, type: 3}
   voiceOver: {fileID: 8300000, guid: 0e75833bed91cf648a0d41a56e294d84, type: 3}

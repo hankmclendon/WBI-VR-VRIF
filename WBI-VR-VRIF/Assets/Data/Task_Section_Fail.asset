@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Task_Section_Fail
   m_EditorClassIdentifier: 
   title: Good Job
-  copy: Only 1 out of 2 but you show promise!
+  copy: You completed 6 out of 7 mission. You show promise!
   buttonOneText: Done
   buttonTwoText: 
+  backgroundImage: {fileID: 0}
   voiceOver: {fileID: 8300000, guid: 52c8ee09bfda5be4e9aeffd9aadec69d, type: 3}

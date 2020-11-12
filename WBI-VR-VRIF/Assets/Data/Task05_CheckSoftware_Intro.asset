@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51601bfaa7a5a84abd80e6b84640688, type: 3}
   m_Name: Task05_CheckSoftware_Intro
   m_EditorClassIdentifier: 
-  title: Instructions
-  copy: Check software updates!
+  title: Check for updates
+  copy: 
   buttonOneText: Start
   buttonTwoText: 
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 21300000, guid: 1fcfca5ed18bfb542a2509e6b16bcbda, type: 3}
   voiceOver: {fileID: 8300000, guid: 56552272d781cca41aa1a2bd197e0b77, type: 3}
