@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dd34cbd4a55344583576c253447b6d, type: 3}
+  m_Name: MenuItem_CheckWireConfiguration
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 0121b81eaef4ecd4480b722facb9c713, type: 3}
+  rollover: {fileID: 21300000, guid: 25e8d6775ff4864438c2b789ce9d03fd, type: 3}
+  selected: {fileID: 21300000, guid: 5dcb9b5fbc7ccee4c9850c27c0ed799e, type: 3}
+  completed: {fileID: 21300000, guid: ca7481b59a0322a44a39434b5fb93dc4, type: 3}
+  failed: {fileID: 21300000, guid: 224cb05544beabf4a95dc63752aa9472, type: 3}
+  titleContent: {fileID: 21300000, guid: f6df7df9f6bbd744db0286e8f004fb73, type: 3}
+  description: "Go to the loadout area and take some of our human performance gear
+    for a test drive before it\u2019s out in the field."
+  location: {x: 82, y: -150, z: 0}

@@ -24,6 +24,11 @@ public class MissionControlPanels : Editor
             panelCanvas.AddComponent<GraphicRaycaster>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         }
+        GameObject eventSystem = GameObject.Find("EventSystem");
+        if (eventSystem == null)
+        {
+            eventSystem = PrefabUtility.InstantiatePrefab(Resources.Load("EventSystem", typeof(GameObject))) as GameObject;
+        }
         GameObject audioPanel = GameObject.Find("AudioPanel");
         if (audioPanel == null)
         { 

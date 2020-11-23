@@ -1,19 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
-namespace Sinthetik.MissionControl {
+public class MissionControl : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-   public class MissionControl : MonoBehaviour 
-   {
-        public GameObject menuPanel;
-        public GameObject debugPanel;
-        public GameObject dialoguePanel;
-        public GameObject timerPanel;
-        public GameObject audioPanel;
-        public GameObject choicePanel;
-        public GameObject instructionalPanel;
-        public List<Section> missionList = new List<Section>( );
-   }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

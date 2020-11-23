@@ -8,32 +8,16 @@ namespace Sinthetik.MissionControl
     public class Trigger : MonoBehaviour
     {
         public bool isActive;
+        private GameObject triggerLocator;
 
         // this event communicates to the Mission who is tracking which trigger is currently active
         public static event System.Action<GameObject> triggerHit;
 
-        // these events are exposed on the editor and allow for any method on any object to be called when the active status changes
-        // this allows the system to hook into any custom events throughout the game
-        public UnityEvent triggerStartEvent;
-        public UnityEvent triggerStopEvent;
-
         void Start()
         {
             isActive = false;
-
-            if (triggerStartEvent == null)
-                triggerStartEvent = new UnityEvent();
-
-            if (triggerStopEvent == null)
-                triggerStopEvent = new UnityEvent();
-        }
-        private void OnTriggerEnter(Collider other)
-        {
-            Debug.Log(other.gameObject.name);
-            if(isActive && other.gameObject.tag == "Player")
-            {
-                TriggerComplete();
-            }
+            triggerLocator = transform.Find("Trigger Locator").gameObject;
+            triggerLocator.SetActive(false);
         }
 
         // this is a convenience method for the fast forward function on the Mission
@@ -45,16 +29,23 @@ namespace Sinthetik.MissionControl
         public void TriggerComplete()
         {
             isActive = false;
-            triggerStopEvent?.Invoke();
             triggerHit?.Invoke(gameObject);
+            triggerLocator.SetActive(false);
         }
 
         public void Activate()
         {
             isActive = true;
-            triggerStartEvent?.Invoke();
+            triggerLocator.SetActive(true);
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (isActive && other.gameObject.tag == "Player")
+            {
+                TriggerComplete();
+            }
+        }
         private void OnDrawGizmos()
         {
             Gizmos.color = new Color32(0, 255, 255, 30);

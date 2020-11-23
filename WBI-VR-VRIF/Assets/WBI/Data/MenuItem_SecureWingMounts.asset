@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dd34cbd4a55344583576c253447b6d, type: 3}
+  m_Name: MenuItem_SecureWingMounts
+  m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: 76ee95c7ba9c0694dbecf8395e0807af, type: 3}
+  rollover: {fileID: 21300000, guid: c33cc9b68b9bd9144bd7a2f0d79e7af2, type: 3}
+  selected: {fileID: 21300000, guid: 2ac5b7db68053514cb5c3549fb35c03d, type: 3}
+  completed: {fileID: 21300000, guid: f94a0eeaf991a534c922c657959e0956, type: 3}
+  failed: {fileID: 21300000, guid: 09f448046312d6440958b1c0bcce9ede, type: 3}
+  titleContent: {fileID: 21300000, guid: 67f90871528e04c47a22b1a493b866ae, type: 3}
+  description: "The wing mounts are crucial hardware, capable of  holding a wide
+    range of heavy artillery and tactical  apparatus. Get on top of the plane and
+    make sure they\u2019re securely fastened."
+  location: {x: 341, y: -194, z: 0}

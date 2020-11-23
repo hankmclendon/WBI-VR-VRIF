@@ -4,26 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using System;
 
 namespace Sinthetik.MissionControl
 {
     public class DialoguePanel : MonoBehaviour
-    {   
-        public ModuleData defaultData;
-        private ModuleData currentData;
+    {
+        private Module currentModule;
+        public GameObject displayPanel;
         public TextMeshProUGUI title;
         public TextMeshProUGUI copy;
-        public TextMeshProUGUI buttonText;
-        public Button button;
+        public TextMeshProUGUI buttonNextText;
+        public TextMeshProUGUI buttonOneText;
+        public TextMeshProUGUI buttonTwoText;
+        public Button buttonNext;
+        public Button buttonOne;
+        public Button buttonTwo;
         public Image image;
         private AudioPanel audioSystem;
         private IEnumerator audioCoroutine;
-        public static UnityAction dialogueClose;
+        [HideInInspector]
+        public bool hasChoice;
+        private bool choice;
 
-        // these events are exposed on the editor and allow for any method on any object to be called when the active status changes
-        // this allows the system to hook into any custom events throughout the game
-        public UnityEvent panelOpenEvent;
-        public UnityEvent panelCloseEvent;
+        public static event Action<bool> choiceClose;
+        public static UnityAction dialogueClose;
 
         void Awake()
         {
@@ -42,61 +47,164 @@ namespace Sinthetik.MissionControl
         }
 
         #endregion
-        public void OpenPanel(ModuleData moduleData = null)
-        {;
-            if(moduleData != null)
-                currentData = moduleData;
-            else
-                currentData = defaultData;
+        public void OpenPanel(Module _currentModule, bool _hasChoice)
+        {
+            currentModule = _currentModule;
+            hasChoice = _hasChoice;
 
-            title.text = currentData.title;
-            copy.text = currentData.copy;
-            buttonText.text = currentData.buttonOneText;
-            if (currentData.backgroundImage != null)
+            if (hasChoice)
             {
-                image.color = new Color(1, 1, 1, 1);
-                image.sprite = currentData.backgroundImage;
+                buttonNext.gameObject.SetActive(false);
+                buttonOne.gameObject.SetActive(true);
+                buttonTwo.gameObject.SetActive(true);
+                //buttonOne.onClick.AddListener(SelectChoiceOne);
+                //buttonTwo.onClick.AddListener(SelectChoiceTwo);
+            }   
+            else
+            {
+                buttonNext.gameObject.SetActive(true);
+                buttonOne.gameObject.SetActive(false);
+                buttonTwo.gameObject.SetActive(false);
+                //buttonOne.onClick.AddListener(ClosePanel);
+            }
+
+            if(currentModule.data != null)
+            {
+                if(currentModule.data.title != null)
+                    title.text = currentModule.data.title;
+                else
+                    title.text = currentModule.moduleName;
+
+                if(currentModule.data.copy != null)
+                    copy.text = currentModule.data.copy;
+                else
+                    copy.text = "Data exists but there is no copy data for this module.";
+
+                if(hasChoice)
+                {
+                    if (currentModule.data.buttonOneText != null)
+                        buttonOneText.text = currentModule.data.buttonOneText;
+                    else
+                        buttonOneText.text = "Choice 1";
+
+                    if (currentModule.data.buttonTwoText != null)
+                        buttonTwoText.text = currentModule.data.buttonTwoText;
+                    else
+                        buttonTwoText.text = "Choice 2";
+                }
+                else
+                {
+                    if (currentModule.data.buttonOneText != null)
+                        buttonNextText.text = currentModule.data.buttonOneText;
+                    else
+                        buttonNextText.text = "Next";
+                }
+
+                if (currentModule.data.backgroundImage != null)
+                {
+                    image.color = new Color(1, 1, 1, 1);
+                    image.sprite = currentModule.data.backgroundImage;
+                }
+                else
+                {
+                    image.color = new Color(1, 1, 1, 0);
+                }
             }
             else
             {
+                title.text = currentModule.moduleName;
+                copy.text = "No data for this module.";
+                if(hasChoice)
+                {
+                    buttonOneText.text = "Choice 1";
+                    buttonTwoText.text = "Choice 2";
+                }
+                else
+                {
+                    buttonNextText.text = "Next";
+                }
+                
                 image.color = new Color(1, 1, 1, 0);
             }
-                
-            gameObject.SetActive(true);
 
-            if(currentData.voiceOver != null)
+            ShowDisplayPanel();
+            
+
+            if (currentModule.audioClip != null)
             {
-                button.interactable = false;
-                button.GetComponent<ButtonTextColorChanger>().isActive = false;
-                audioSystem.PlayAudio(currentData.voiceOver);
+                Debug.Log("Dialogue AudioClip !- null");
+                buttonOne.interactable = false;
+                if (hasChoice)
+                    buttonTwo.interactable = false;
+                buttonOne.GetComponent<ButtonTextColorChanger>().isActive = false;
+                audioSystem.PlayAudio(currentModule.audioClip);
             }
             else
             {
+                
                 EnableButton();
             }
-
-            panelOpenEvent?.Invoke();
         }
         private void EnableButton()
         {
-            button.interactable = true;
-            button.GetComponent<ButtonTextColorChanger>().isActive = true;
+            buttonOne.interactable = true;
+            if (hasChoice)
+                buttonTwo.interactable = true;
+            buttonOne.GetComponent<ButtonTextColorChanger>().isActive = true;
         }
         private void AudioComplete(AudioClip audioClip)
         {
-            if (audioClip == currentData.voiceOver)
+            if (audioClip == currentModule.audioClip)
                 EnableButton();
+        }
+
+        public void SelectChoiceOne()
+        {
+            choice = true;
+            ClosePanel();
+        }
+        public void SelectChoiceTwo()
+        {
+            choice = false;
+            ClosePanel();
         }
         public void ClosePanel()
         {
-            gameObject.SetActive(false);
-            dialogueClose?.Invoke();
-            panelCloseEvent?.Invoke();
+
+            HideDisplayPanel();
+           // audioSystem.KillAudio();
+
+            if (hasChoice)
+            {
+                //buttonOne.onClick.RemoveAllListeners();
+                //buttonTwo.onClick.RemoveAllListeners();
+                choiceClose?.Invoke(choice);
+            }
+            else
+            {
+                Debug.Log("DialogueClose Invoked");
+                //buttonOne.onClick.RemoveAllListeners();
+                dialogueClose?.Invoke();
+            }
+                
         }
         public void Skip()
         {
-            audioSystem.KillAudio();
-            ClosePanel();
+            if (hasChoice)
+                SelectChoiceOne();
+            else
+                ClosePanel();
+        }
+
+        public void ShowDisplayPanel()
+        {
+            displayPanel.SetActive(true);
+            gameObject.SetActive(true);
+        }
+
+        public void HideDisplayPanel()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

@@ -5,86 +5,163 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
 using TMPro;
+using Sirenix.OdinInspector;
 
 namespace Sinthetik.MissionControl
 {
     public class MenuPanel : MonoBehaviour
     {
-        public GameObject menuItemPrefab;
-        public GameObject menuItemButtonPrefab;
-        public GameObject buttonPanel;
+        //public GameObject menuButtonPrefab;
+        public GameObject displayPanel;
         public GameObject locator;
         public Button activateButton;
+        public TextMeshProUGUI activateButtonText;
+        public TextMeshProUGUI descriptionTextArea;
         public Image titleArea;
-        public TextMeshProUGUI descriptionArea;
-        private SubSection currentSubSection;
+        public Sprite completedImage;
+        public Sprite failedImage;
+        [TextArea]
+        public string completedText;
+        public List<GameObject> buttonList = new List<GameObject>();
+        private Task currentTask;
+        private List<Task> currentList;
+        public bool isCompleted;
+        private int failedMissions = 0;
+        private int completedMissions = 0;
+        private int totalMissions = 0;
         
-        public static event Action<SubSection> itemSelected;
+        public static event Action<Task> itemSelected;
+        public static UnityAction menuComplete;
 
-        public void BuildMenu(List<SubSection> currentList)
+        public void OpenPanel(List<Task> _currentList, bool _isCompleted)
+        {
+            currentList = _currentList;
+            isCompleted = _isCompleted;
+            ShowDisplayPanel();
+            if (isCompleted)
+            {
+                for (int i = 0; i < currentList.Count; i++)
+                {
+                    totalMissions += 1;
+                    if (currentList[i].deactivated)
+                        failedMissions += 1;
+                    completedMissions = totalMissions - failedMissions;
+                }
+
+                if(failedMissions == 0)
+                    descriptionTextArea.text = "Congrats! You completed all the missions! You show great potential!";
+                else if(failedMissions <= totalMissions/2)
+                    descriptionTextArea.text = "Not bad! You completed " + completedMissions + " out of " + totalMissions + ". Thanks for helping us out.";
+                else
+                    descriptionTextArea.text = "Not so great. You completed " + completedMissions + " out of " + totalMissions + ". Better luck next time.";
+
+                activateButtonText.text = "Finish";
+                titleArea.sprite = completedImage; 
+            }
+                
+            BuildMenu();
+        }
+
+        private void BuildMenu()
         {
             bool currentlySelected = true;
 
-            foreach (Transform child in buttonPanel.transform)
-            {
-                Destroy(child.gameObject);
-            }
+            //foreach (Transform child in buttonPanel.transform)
+            //{
+            //    Destroy(child.gameObject);
+            //}
 
-            foreach (SubSection subSection in currentList)
-            {
-                GameObject menuItem = Instantiate(menuItemButtonPrefab);
-                menuItem.transform.SetParent(buttonPanel.transform, false);
-                Debug.Log("add button");
-                //menuItem.transform.GetChild(0).GetComponent<Text>().text = subSection.name;
-                Button button = menuItem.GetComponent<Button>();
-                Image image = menuItem.GetComponent<Image>();
-                image.sprite = subSection.data.buttonNormal;
+            Debug.Log("CurrentList Count = " + currentList.Count);
 
-                if (!subSection.isComplete && !subSection.deactivated)
+            for(int i = 0; i < currentList.Count; i++)
+            {
+                Task currentTask = currentList[i];
+                Button currentButton = buttonList[i].GetComponent<Button>();
+                Image currentButtonImage = buttonList[i].GetComponent<Image>();
+                //Debug.Log(currentButtonImage.sprite);
+
+                currentButtonImage.sprite = currentTask.menuContent.normal;
+                currentButton.transition = Selectable.Transition.SpriteSwap;
+
+                if (!currentTask.isComplete && !currentTask.deactivated)
                 {
                     SpriteState _spriteState = new SpriteState();
-                    _spriteState.highlightedSprite = subSection.data.buttonRollover;
-                    _spriteState.selectedSprite = subSection.data.buttonSelected;
-                    button.spriteState = _spriteState;
+                    _spriteState.highlightedSprite = currentTask.menuContent.rollover;
+                    _spriteState.selectedSprite = currentTask.menuContent.selected;
+                    currentButton.spriteState = _spriteState;
 
-                    button.onClick.AddListener(() => ItemSelected(subSection));
+                    currentButton.onClick.AddListener(() => ItemSelected(currentTask));
+
                     if (currentlySelected)
                     {
-                        button.Select();
-                        ItemSelected(subSection);
+                        currentButton.Select();
+                        ItemSelected(currentTask);
                         currentlySelected = false;
                     }
                 }
-                else if (subSection.isComplete && !subSection.deactivated)
+                else if (currentTask.isComplete && !currentTask.deactivated)
                 {
-                    button.interactable = false;
+                    currentButton.interactable = false;
                     SpriteState _spriteState = new SpriteState();
-                    _spriteState.disabledSprite = subSection.data.buttonCompleted;
-                    button.spriteState = _spriteState;
+                    _spriteState.disabledSprite = currentTask.menuContent.completed;
+                    currentButton.spriteState = _spriteState;
                 }
-                else 
+                else
                 {
-                    button.interactable = false;
+                    currentButton.interactable = false;
                     SpriteState _spriteState = new SpriteState();
-                    _spriteState.disabledSprite = subSection.data.buttonFailed;
-                    button.spriteState = _spriteState;
+                    _spriteState.disabledSprite = currentTask.menuContent.failed;
+                    currentButton.spriteState = _spriteState;
                 }
             }
-            activateButton.onClick.AddListener(() => StartMission(currentSubSection));
+
+            if(isCompleted)
+            {
+                activateButton.onClick.RemoveAllListeners();
+                activateButton.onClick.AddListener(() => FinishGame());
+            }
+            else
+            {
+                activateButton.onClick.RemoveAllListeners();
+                activateButton.onClick.AddListener(() => StartMission(currentTask));
+            }
+                
         }
 
-        void ItemSelected(SubSection subSection)
+        void ItemSelected(Task task)
         {
-            titleArea.sprite = subSection.data.titleImage;
-            descriptionArea.text = subSection.data.descriptionCopy;
-            locator.transform.localPosition = subSection.data.locator;
-            currentSubSection = subSection;
+            titleArea.sprite = task.menuContent.titleContent;
+            descriptionTextArea.text = task.menuContent.description;
+            locator.transform.localPosition = task.menuContent.location;
+            currentTask = task;
         }
 
 
-        void StartMission(SubSection subSection)
+        void StartMission(Task task)
         {
-            itemSelected?.Invoke(subSection);
+            itemSelected?.Invoke(task);
+            HideDisplayPanel();
+        }
+
+        void FinishGame()
+        {
+            menuComplete?.Invoke();
+            HideDisplayPanel();
+        }
+
+        public void Skip()
+        {
+            FinishGame();
+        }
+
+        public void ShowDisplayPanel()
+        {
+            displayPanel.SetActive(true);
+            gameObject.SetActive(true);
+        }
+
+        public void HideDisplayPanel()
+        {
             gameObject.SetActive(false);
         }
     }

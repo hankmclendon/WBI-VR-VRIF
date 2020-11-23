@@ -10,9 +10,12 @@ namespace Sinthetik.MissionControl
 {
     public class TimerPanel : MonoBehaviour
     {
+        private Module currentModule;
+        public GameObject displayPanel;
         private TextMeshProUGUI timeText;
         private float timeRemaining;
-        private bool isRunning = false;
+        [HideInInspector]
+        public bool isRunning = false;
 
         public static UnityAction timerComplete;
 
@@ -21,17 +24,20 @@ namespace Sinthetik.MissionControl
             timeText = gameObject.transform.Find("DisplayPanel").gameObject.transform.Find("Text").GetComponent<TextMeshProUGUI>();
         }
 
-        public void StartTimer(float timeout)
+        public void StartTimer(float _timer)
         {
-            Debug.Log(timeout);
-            timeRemaining = timeout;
+            
+
+            timeRemaining = _timer;
+            Debug.Log("START: Time Remaing = " + timeRemaining);
             isRunning = true;
-            gameObject.SetActive(true);
+            ShowDisplayPanel();
         }
         public void StopTimer()
         {
+            Debug.Log("STOP: Time Remaing = " + timeRemaining);
             isRunning = false;
-            gameObject.SetActive(false);
+            HideDisplayPanel();
         }
 
         void Update()
@@ -49,7 +55,7 @@ namespace Sinthetik.MissionControl
                     timerComplete?.Invoke();
                     timeRemaining = 0;
                     isRunning = false;
-                    gameObject.SetActive(false);
+                    displayPanel.SetActive(false);
                 }
             }
         }
@@ -63,6 +69,16 @@ namespace Sinthetik.MissionControl
             //float seconds = Mathf.FloorToInt(timeToDisplay % 60);
             
             timeText.text = "00 " + string.Format("{0:00} {1:00}", t.Minutes, t.Seconds);
+        }
+
+        public void ShowDisplayPanel()
+        {
+            displayPanel.SetActive(true);
+        }
+
+        public void HideDisplayPanel()
+        {
+            displayPanel.SetActive(false);
         }
     }
 }
