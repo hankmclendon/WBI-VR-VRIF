@@ -72,6 +72,7 @@ namespace BNG {
         }
 
         public void OnSnapChange(float yAngle) {
+            Debug.Log("OnSnapChange Updating: yAngle = " + yAngle);
 
             if(SnapGraphics) {
                 SnapGraphics.localEulerAngles = new Vector3(SnapGraphics.localEulerAngles.x, yAngle, SnapGraphics.localEulerAngles.z);
