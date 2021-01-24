@@ -6,8 +6,10 @@ using Sirenix.OdinInspector;
 using UnityEngine.Events;
 using UnityEditor;
 using System.Linq;
+#if UNITY_EDITOR
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities.Editor;
+#endif
 
 namespace Sinthetik.MissionControl
 {
@@ -127,7 +129,9 @@ namespace Sinthetik.MissionControl
             {
                 GameObject[] newSelection = new GameObject[1];
                 newSelection[0] = trigger;
+                #if UNITY_EDITOR
                 Selection.objects = newSelection;
+#endif
             }
 
         }
@@ -221,6 +225,7 @@ public class ColorFoldoutGroupAttribute : PropertyGroupAttribute
     }
 }
 
+#if UNITY_EDITOR
 public class ColorFoldoutGroupAttributeDrawer : OdinGroupDrawer<ColorFoldoutGroupAttribute>
 {
     private LocalPersistentContext<bool> isExpanded;
@@ -252,3 +257,4 @@ public class ColorFoldoutGroupAttributeDrawer : OdinGroupDrawer<ColorFoldoutGrou
         SirenixEditorGUI.EndBox();
     }
 }
+#endif
