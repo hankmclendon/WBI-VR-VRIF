@@ -75,25 +75,45 @@ ModelImporter:
       name: Screen
     second: {fileID: 2100000, guid: d9dc818731b787b49b1987dd901c9c68, type: 2}
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Simulator Screen
+    second: {fileID: 2100000, guid: ed1b1eb4f699806478f01f9b95a5b52e, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: C-130_Chassis_Bump
-    second: {fileID: 2800000, guid: 66b33df527c0fe641b1df2c966072474, type: 3}
+    second: {fileID: 2800000, guid: 3efa696054d384c4eb610a273c87ea20, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: C-130_Chassis_Diffuse
-    second: {fileID: 2800000, guid: 9718e0e96d2cf6e46a9cbd714e1bc47b, type: 3}
+    second: {fileID: 2800000, guid: 981f56d734147bc41be64bb64470b28c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Chassis_Reflection
+    second: {fileID: 2800000, guid: c53f940cbd96d684a83f8140dcc8676e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: C-130_Glass_Diffuse
-    second: {fileID: 2800000, guid: 610206384fdd5144b9fb29299cda78a6, type: 3}
+    second: {fileID: 2800000, guid: e94057ec32bbcf24c98f918ebea7d715, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Glass_Opacity
+    second: {fileID: 2800000, guid: 053dfd391d5798c4d9f31479b8ac0d31, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Glass_Reflection
+    second: {fileID: 2800000, guid: f5771808bc859d44b81120283acb8637, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: C-130_Pribor_Diffuse
-    second: {fileID: 2800000, guid: ebc1bf411701454448562669fda83743, type: 3}
+    second: {fileID: 2800000, guid: cfb154a74960fe14c997fd13f2ca7d3a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
@@ -104,6 +124,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: C-130_Salon_Diffuse
     second: {fileID: 2800000, guid: b872179fe5f3855458ccf7e8061b8955, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV_Grid_Sm
+    second: {fileID: 2800000, guid: 5ea92de7c2bbe914bbb38914eaf5efd7, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0

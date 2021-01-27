@@ -2,57 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 namespace Sinthetik.Helpers
 {
-    [RequireComponent(typeof(Animator))]
+    
     public class CameraFadeController : MonoBehaviour
     {
-        public float initialWaitTime;
-        private Animator anim;
-        bool faded = false;
+        public MeshRenderer renderer;
+        public float fadeSpeed;
 
-        public UnityEvent fadeComplete = new UnityEvent();
-
-        void Start()
+        public UnityEvent fadeCompleted = new UnityEvent();
+        public IEnumerator FadeInCameraCoroutine()
         {
-            anim = GetComponent<Animator>();
-            StartCoroutine(DelayCoroutine());
-        }
-
-        public void FadeCameraIn()
-        {
-            anim.SetBool("FadeIn", true);
-            faded = true;
-        }
-
-        public void FadeCameraOut()
-        {
-            anim.SetBool("FadeIn", false);
-            faded = false;
-        }
-
-        public void FadeComplete()
-        {
-            fadeComplete?.Invoke();
-        }
-
-        IEnumerator DelayCoroutine()
-        {
-            yield return new WaitForSeconds(initialWaitTime);
-            FadeCameraIn();
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown("space"))
+            float a = renderer.material.GetFloat("_alpha");
+            while (a > 0)
             {
-                if (faded)
-                    FadeCameraOut();
-                else
-                    FadeCameraIn();
+                a -= (fadeSpeed * Time.deltaTime);
+                renderer.material.SetFloat("_alpha", a);
+                yield return null;
             }
+            fadeCompleted?.Invoke();
         }
+
+        public IEnumerator FadeOutCameraCoroutine()
+        {
+            float a = renderer.material.GetFloat("_alpha");
+            while (a < 1)
+            {
+                a += (fadeSpeed * Time.deltaTime);
+                renderer.material.SetFloat("_alpha", a);
+                yield return null;
+            }
+            fadeCompleted?.Invoke();
+        }
+
+        public void FadeOutCamera()
+        {
+            StartCoroutine(FadeOutCameraCoroutine());
+            
+        }
+
+        public void FadeInCamera()
+        {
+            Debug.Log("FadeInCamera called");
+            StartCoroutine(FadeInCameraCoroutine());
+            
+        }
+
+        // void Update()
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        FadeInCamera();
+        //    }
+        //}
 
     }
 }

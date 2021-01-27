@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/BNG Framework/Scenes/XR Demo.unity
-    guid: a1360534006d3f845bc79b46b93cfec5
+  - enabled: 1
+    path: Assets/WBI/Scenes/WBI Intro.unity
+    guid: 998284587f206cc4a87bbe5daa0dd220
   - enabled: 1
     path: Assets/WBI/Scenes/C-130.unity
     guid: 84588eaf0e54ecf45bd690a9b42b8d7a

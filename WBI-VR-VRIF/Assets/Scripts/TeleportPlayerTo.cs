@@ -1,13 +1,19 @@
 ﻿using BNG;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
+using Sinthetik.Helpers;
 public class TeleportPlayerTo : MonoBehaviour
 {
     public PlayerTeleport teleport;
-    public Transform destination;
 
-    public void TeleportPlayerLocation()
+    public UnityEvent teleportCompleted = new UnityEvent();
+
+    public void Teleport()
     {
-        teleport.TeleportPlayerToTransform(destination);
+        teleport.TeleportPlayerToTransform(gameObject.transform);
+        teleportCompleted?.Invoke();
     }
+    
 }
