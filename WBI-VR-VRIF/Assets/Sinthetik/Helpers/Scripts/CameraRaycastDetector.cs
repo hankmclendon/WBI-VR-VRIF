@@ -13,6 +13,10 @@ namespace Sinthetik.Helpers
 
         public UnityEvent hitDetected = new UnityEvent();
 
+        private void Start()
+        {
+            //camera.fieldOfView = 16f;
+        }
         void Update()
         {
             Vector3 screenPoint = camera.WorldToViewportPoint(targetPoint.position);

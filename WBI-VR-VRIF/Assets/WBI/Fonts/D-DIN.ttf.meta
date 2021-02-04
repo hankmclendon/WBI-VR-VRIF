@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da1705a79e348914fa6c1504faa02014
+guid: 566bbef38c65c724097a441cf98f6d59
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: DIN Pro
+  fontName: D-DIN
   fontNames:
-  - DIN Pro
+  - D-DIN
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

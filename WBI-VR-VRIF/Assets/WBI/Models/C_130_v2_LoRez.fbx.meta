@@ -3,7 +3,202 @@ guid: 203b97ba137748f4ba24dfce36febda5
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chassis
+    second: {fileID: 2100000, guid: de99d0efcb7612847b2546a9b421c5ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Copper
+    second: {fileID: 2100000, guid: f33b319f5df562549b39a6439fd3e2b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 5430d59759d4f804aa4ca81dc0d9c06c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass2
+    second: {fileID: 2100000, guid: 178e5e2c6499cc541a7e52199a318664, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_Green
+    second: {fileID: 2100000, guid: f2f9c625b36aafc45ba0cd8510ae9dd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_Red
+    second: {fileID: 2100000, guid: 3cf58af155b14ab4c97f7923def8bf10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Housing
+    second: {fileID: 2100000, guid: 6160821962305b649ba07ff6959e4688, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hrom
+    second: {fileID: 2100000, guid: dbbecd728a269484c9a6af51241e7dd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Black
+    second: {fileID: 2100000, guid: c1a1ecddb5cd4554eb7544f6394aa4f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Black2
+    second: {fileID: 2100000, guid: b42fdec1da5abad438d26e677d6bdc8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Gray
+    second: {fileID: 2100000, guid: 2114f91960b9bda409af9fc18a049e13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Green
+    second: {fileID: 2100000, guid: 313b8cf2817e5b9488cdc7e62cb9e0ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Red
+    second: {fileID: 2100000, guid: 0f36a6470febd384c8c4b93de0d532c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Red2
+    second: {fileID: 2100000, guid: 4ca29d1b02d3f4e43a0dfcecd3a6f834, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Yellow
+    second: {fileID: 2100000, guid: 3c59ef1633d204e42a98aea240de6465, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 244a2cd56bfdebc4d8f6e7699bfd563a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 2cd4b56ba5c3c4d499f85c105e853f1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pribor
+    second: {fileID: 2100000, guid: 89e483515cab9404098217908f1f9606, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber
+    second: {fileID: 2100000, guid: 9877a34a5a8ee884cacfdaa0996cc70e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Salon
+    second: {fileID: 2100000, guid: 478cce63d95cbb24fae4d774f1b61a82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: b92945282e7fd3141953fbef62aafb22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skrew
+    second: {fileID: 2100000, guid: 23dd449554d6cee4f8ba7484a295d9c5, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Chassis_Bump
+    second: {fileID: 2800000, guid: 2b30c636737510e4a90bd6d651ef7723, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Chassis_Diffuse
+    second: {fileID: 2800000, guid: def3931608627cf408f25c7b4da9bf28, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Chassis_Diffuse2
+    second: {fileID: 2800000, guid: a5dd0542a8b8cb94ab757ba3e6654094, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Chassis_Reflection
+    second: {fileID: 2800000, guid: acfb37cc423031d48af59b74ba953f0b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Chassis_Reflection2
+    second: {fileID: 2800000, guid: 2e6d8fc38171c2c4dad5164db0d8d859, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Copper_diffuse
+    second: {fileID: 2800000, guid: 4d8a27319eb23c741a8049c6aaa8b6b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Copper_reflect_color
+    second: {fileID: 2800000, guid: 5eaf8e33d2782e94ab14ad9597ff5b7b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Glass_Diffuse
+    second: {fileID: 2800000, guid: 9fc19a02c90d30542a56e83d98a8c59c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Glass_Opacity
+    second: {fileID: 2800000, guid: 9230a1e782e545245853a19c43baa0e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Glass_Reflection
+    second: {fileID: 2800000, guid: a2b2028819b91bb4da07b17eea7677b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Housing_Diffuse
+    second: {fileID: 2800000, guid: 10469eebbc641a74eae0c5e6c982bd27, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Pribor_Diffuse
+    second: {fileID: 2800000, guid: 4da637f1ba2a7e64a816e18d16185058, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Salon_Bump
+    second: {fileID: 2800000, guid: c9ffc18da1e590b4eb48931861d31971, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Salon_Diffuse
+    second: {fileID: 2800000, guid: be5f6003de3f9e248822416c6451d561, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Salon_Reflection
+    second: {fileID: 2800000, guid: 9010f5c2cc8deba459302d13bd62d299, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Skrew_Diffuse
+    second: {fileID: 2800000, guid: ba166c0d3a53b9b4c9ce68d0e68b65f2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: C-130_Skrew_Reflection
+    second: {fileID: 2800000, guid: daf6c9f506f87a841808c6f524f836e9, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0

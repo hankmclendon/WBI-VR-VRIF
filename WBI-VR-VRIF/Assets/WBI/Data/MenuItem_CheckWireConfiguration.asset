@@ -20,4 +20,4 @@ MonoBehaviour:
   titleContent: {fileID: 21300000, guid: f6df7df9f6bbd744db0286e8f004fb73, type: 3}
   description: "Go to the loadout area and take some of our human performance gear
     for a test drive before it\u2019s out in the field."
-  location: {x: 82, y: -150, z: 0}
+  location: {x: 117, y: -155, z: 0}

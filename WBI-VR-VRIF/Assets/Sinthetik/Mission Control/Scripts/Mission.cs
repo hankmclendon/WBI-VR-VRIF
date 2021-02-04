@@ -132,7 +132,7 @@ namespace Sinthetik.MissionControl
             // determine whether to start new section with menu or linear sequence
             if (currentSection.hasMenu)
             {
-                Debug.Log("CheckForMenu Called. CurrentSection.hasMenu");
+                //Debug.Log("CheckForMenu Called. CurrentSection.hasMenu");
                 menu.OpenPanel(currentTaskList, false); // false flag let's the menu know it hasn't been completed (currently a hack)
             }
             else
@@ -275,7 +275,10 @@ namespace Sinthetik.MissionControl
                 else if (currentModule.choiceOne == Module.Choice.End)
                     End();
                 else if (currentModule.choiceOne == Module.Choice.Custom)
-                    CustomChoiceOne();
+                    currentModuleList = currentTask.successList;
+                    moduleCount = 0;
+                    currentModule = currentModuleList[moduleCount];
+                    ActivateModule();
             }
             else
             {
@@ -288,8 +291,11 @@ namespace Sinthetik.MissionControl
                 else if (currentModule.choiceTwo == Module.Choice.End)
                     End();
                 else if (currentModule.choiceTwo == Module.Choice.Custom)
-                    CustomChoiceTwo();
-            }
+                    currentModuleList = currentTask.failList;
+                    moduleCount = 0;
+                    currentModule = currentModuleList[moduleCount];
+                    ActivateModule();
+                }
         }
         private void TimerComplete()
         {
@@ -312,7 +318,7 @@ namespace Sinthetik.MissionControl
         #region Next Methods
         private void NextModule()
         {
-            Debug.Log("NextModule Called. Section = " + currentSection.sectionName + ". Task = " + currentTask.taskName + ". Module = " + currentModule.moduleName);
+            //Debug.Log("NextModule Called. Section = " + currentSection.sectionName + ". Task = " + currentTask.taskName + ". Module = " + currentModule.moduleName);
             // End of List: End of Game
             if (currentModuleList == endOfGameList && moduleCount == currentModuleList.Count - 1)
             {
@@ -362,7 +368,7 @@ namespace Sinthetik.MissionControl
             // Any module list that isn't yet completed
             else if (moduleCount < currentModuleList.Count - 1)
             {
-                Debug.Log("List = Any List, Still Incrementing");
+                //Debug.Log("List = Any List, Still Incrementing");
                 moduleCount += 1;
                 currentModule = currentModuleList[moduleCount];
                 ActivateModule();
@@ -370,10 +376,10 @@ namespace Sinthetik.MissionControl
             // if we are at the end of the module list, and there are success modules, move to the tasks success list
             else if(currentModuleList == currentTask.modules && moduleCount == currentModuleList.Count-1)
             {
-                Debug.Log("End of Module List. Check for Success.");
+                //Debug.Log("End of Module List. Check for Success.");
                 if (currentTask.successList.Count != 0)
                 {
-                    Debug.Log("Succcess List isn't empty so move to success list");
+                    //Debug.Log("Succcess List isn't empty so move to success list");
                     if (timer.isRunning)
                         timer.StopTimer();
                     currentModuleList = currentTask.successList;
@@ -383,14 +389,14 @@ namespace Sinthetik.MissionControl
                 }
                 else
                 {
-                    Debug.Log("Move to Next Task");
+                    //Debug.Log("Move to Next Task");
                     NextTask();
                 }
             }
         }
         private void NextTask()
         {
-            Debug.Log("Next Task Called");
+           //Debug.Log("Next Task Called");
             // we must 0 out all child lists below this one
             moduleCount = 0;
 
@@ -449,7 +455,7 @@ namespace Sinthetik.MissionControl
         }
         private void NextSection()
         {
-            Debug.Log("Next Section Called");
+            //Debug.Log("Next Section Called");
             // we must 0 out all child lists below this one
             moduleCount = 0;
             taskCount = 0;
