@@ -15,6 +15,7 @@ public class CalibrationController : MonoBehaviour
     public Material redScreen;
     public Material blueScreen;
     public Material greenScreen;
+    //bool taskComplete = false;
 
     public UnityEvent taskCompleted = new UnityEvent();
 
@@ -25,9 +26,10 @@ public class CalibrationController : MonoBehaviour
             currentTimeInSeconds += Time.deltaTime;
             if (currentTimeInSeconds >= holdTimeInSeconds)
             {
-                currentTimeInSeconds = 0;
-                taskCompleted?.Invoke();
+                //taskComplete = true;
+                //currentTimeInSeconds = 0;
                 audio.Play();
+                taskCompleted?.Invoke();
             }
         }
     }

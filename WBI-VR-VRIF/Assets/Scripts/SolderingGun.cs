@@ -16,13 +16,14 @@ public class SolderingGun : MonoBehaviour
     private SoundPlayer sound;
     private IEnumerator solderingCoroutine;
     private Collider currentCollider;
+    private bool currentColliderComplete = false;
 
     public UnityEvent taskCompleted = new UnityEvent();
     
 
     void Start()
     {
-        sound = GetComponent<SoundPlayer>();    
+        sound = GetComponent<SoundPlayer>();
     }
     public void CheckForContact(Collider collider)
     {
@@ -57,7 +58,8 @@ public class SolderingGun : MonoBehaviour
         sparks.Stop();
         StopCoroutine(solderingCoroutine);
         sound.StopAudio();
-        sound.PlayAudio(solderFail);
+        if(currentColliderComplete == false)
+            sound.PlayAudio(solderFail);
     }
 
     private void StartSparks()
@@ -66,11 +68,13 @@ public class SolderingGun : MonoBehaviour
         solderingCoroutine = DelayCoroutine();
         StartCoroutine(solderingCoroutine);
         sound.PlayLoop(sparksLoop);
+        currentColliderComplete = false;
     }
 
     IEnumerator DelayCoroutine()
     {
         yield return new WaitForSeconds(3);
+        currentColliderComplete = true;
         sound.PlayAudio(solderComplete);
         contactsCompleted.Add(currentCollider);
         bool allContactsCompleted = contactPoints.All(i => contactsCompleted.Contains(i));
@@ -81,4 +85,5 @@ public class SolderingGun : MonoBehaviour
             taskCompleted?.Invoke();
         }
     }
+
 }
