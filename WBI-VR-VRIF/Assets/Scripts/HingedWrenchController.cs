@@ -10,6 +10,7 @@ public class HingedWrenchController : MonoBehaviour
     public GameObject hinge;
     public Transform bolt;
     public Text torqueText;
+    public Text ring;
 
     private Lever lever;
     private JointHelper jointHelper;
@@ -55,6 +56,7 @@ public class HingedWrenchController : MonoBehaviour
         lever.enabled = false;
         //jointHelper.enabled = true;
         audio.Play();
+        ring.color = new Color(0, 1, 0, .4f);
         StartCoroutine(EndDelayCoroutine());
     }
 

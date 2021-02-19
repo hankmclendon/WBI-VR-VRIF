@@ -20,6 +20,9 @@ namespace Sinthetik.MissionControl
         public Image titleArea;
         public Sprite completedImage;
         public Sprite failedImage;
+        public AudioClip successAudio;
+        public AudioClip notBadAudio;
+        public AudioClip failedAudio;
         [TextArea]
         public string completedText;
         public List<GameObject> buttonList = new List<GameObject>();
@@ -29,9 +32,15 @@ namespace Sinthetik.MissionControl
         private int failedMissions = 0;
         private int completedMissions = 0;
         private int totalMissions = 0;
-        
+        private SoundPlayer soundPlayer;
+
         public static event Action<Task> itemSelected;
         public static UnityAction menuComplete;
+
+        void Start()
+        {
+            soundPlayer = GetComponent<SoundPlayer>();
+        }
 
         public void OpenPanel(List<Task> _currentList, bool _isCompleted)
         {
@@ -49,11 +58,20 @@ namespace Sinthetik.MissionControl
                 }
 
                 if(failedMissions == 0)
+                {
                     descriptionTextArea.text = "Congrats! You completed all the missions! You show great potential!";
+                    soundPlayer.PlayAudio(successAudio);
+                }
                 else if(failedMissions <= totalMissions/2)
+                {
                     descriptionTextArea.text = "Not bad! You completed " + completedMissions + " out of " + totalMissions + ". Thanks for helping us out.";
+                    soundPlayer.PlayAudio(notBadAudio);
+                }  
                 else
+                {
                     descriptionTextArea.text = "Not so great. You completed " + completedMissions + " out of " + totalMissions + ". Better luck next time.";
+                    soundPlayer.PlayAudio(failedAudio);
+                }                  
 
                 activateButtonText.text = "Finish";
                 titleArea.sprite = completedImage; 

@@ -19,6 +19,9 @@ public class MissionProfileController : MonoBehaviour
     public AudioClip wrong;
     public AudioClip right;
     public AudioClip complete;
+    public AudioClip nextCartridgeInstructions;
+    public AudioClip hitButton;
+    public bool firstCartridge = true;
 
     public UnityEvent taskCompleted = new UnityEvent();
 
@@ -29,7 +32,6 @@ public class MissionProfileController : MonoBehaviour
 
     public void LoadMissionProfile()
     {
-        Debug.Log("LoadMissionProfile = " + registeredCartridge);
         if (registeredCartridge == cartridge01)
         {
             videoPlayer.clip = videoClip01;
@@ -58,7 +60,11 @@ public class MissionProfileController : MonoBehaviour
     public void RegisterCartridge()
     {
         registeredCartridge = queuedCartridge;
-        Debug.Log("RegisterCartridge = " + registeredCartridge);
+        if(firstCartridge)
+        {
+            soundPlayer.PlayAudio(hitButton);
+            firstCartridge = false;
+        }
     }
     public void UnregisterCartridge()
     {
@@ -67,7 +73,6 @@ public class MissionProfileController : MonoBehaviour
     public void QueueCartridge(GameObject cartridge)
     {
         queuedCartridge = cartridge;
-        Debug.Log("QueueCartridge = " + cartridge);
     }
     private void CheckCompletion()
     {
@@ -75,11 +80,15 @@ public class MissionProfileController : MonoBehaviour
         {
             StartCoroutine(DelayCoroutine());
         }
+        else
+        {
+            soundPlayer.PlayAudio(nextCartridgeInstructions);
+        }
     }
 
     IEnumerator DelayCoroutine()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         soundPlayer.PlayAudio(complete);
         taskCompleted?.Invoke();
     }

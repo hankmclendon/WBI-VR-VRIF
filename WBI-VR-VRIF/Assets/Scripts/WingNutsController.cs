@@ -17,14 +17,16 @@ public class WingNutsController : MonoBehaviour
         boltsCompleted += 1;
         if (boltsCompleted == 3)
         {
-            StartCoroutine(DelayCoroutine());
+            //StartCoroutine(DelayCoroutine());
+            audio.Play();
+            taskCompleted?.Invoke();
         }
     }
 
-    IEnumerator DelayCoroutine()
-    {
-        yield return new WaitForSeconds(2);
-        audio.Play();
-        taskCompleted?.Invoke();
-    }
+    //IEnumerator DelayCoroutine()
+    //{
+    //    yield return new WaitForSeconds(2);
+    //    audio.Play();
+    //    taskCompleted?.Invoke();
+    //}
 }
