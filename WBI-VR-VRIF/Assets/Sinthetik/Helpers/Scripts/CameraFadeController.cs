@@ -45,7 +45,7 @@ namespace Sinthetik.Helpers
 
         public void FadeInCamera()
         {
-            Debug.Log("FadeInCamera called");
+            //Debug.Log("FadeInCamera called");
             StartCoroutine(FadeInCameraCoroutine());
             
         }

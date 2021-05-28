@@ -89,7 +89,7 @@ namespace Sinthetik.MissionControl
             //    Destroy(child.gameObject);
             //}
 
-            Debug.Log("CurrentList Count = " + currentList.Count);
+            //Debug.Log("CurrentList Count = " + currentList.Count);
 
             for(int i = 0; i < currentList.Count; i++)
             {

@@ -30,7 +30,7 @@ namespace Sinthetik.MissionControl
         {
             isActive = false;
             activityStopEvent?.Invoke();
-            Debug.Log("Activity Complete: " + gameObject.name);
+            //Debug.Log("Activity Complete: " + gameObject.name);
             activityComplete?.Invoke(gameObject);
         }
 

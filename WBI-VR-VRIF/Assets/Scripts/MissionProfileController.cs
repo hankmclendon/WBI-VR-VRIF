@@ -62,7 +62,7 @@ public class MissionProfileController : MonoBehaviour
         registeredCartridge = queuedCartridge;
         if(firstCartridge)
         {
-            soundPlayer.PlayAudio(hitButton);
+            //soundPlayer.PlayAudio(hitButton);
             firstCartridge = false;
         }
     }

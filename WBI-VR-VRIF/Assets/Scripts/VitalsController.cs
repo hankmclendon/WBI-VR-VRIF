@@ -38,12 +38,16 @@ public class VitalsController : MonoBehaviour
 
     public void ReachOutArm()
     {
-        character.SetTrigger("Reach");
+        character.SetBool("Reach", true);
+    }
+
+    public void RetractArm()
+    {
+        character.SetBool("Reach", false);
     }
 
     public void PatchAttached()
     {
-        character.SetTrigger("Return");
         patchAttached = true;
         soundPlayer.PlayAudio(instructions);
     }

@@ -18,17 +18,22 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Cartridge_Normal
-    second: {fileID: 2800000, guid: acb177efe1c1df0429f35b9a2e051b49, type: 3}
+    second: {fileID: 2800000, guid: 70ea4744634d6e1468afebcc3ba48fab, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Console_Color
-    second: {fileID: 2800000, guid: d296c4ad470753241baabed2ff8aadbc, type: 3}
+    second: {fileID: 2800000, guid: 99b086762a949564489b49f9fa9e8595, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Console_Normal
-    second: {fileID: 2800000, guid: ef988c9764a99e445842f8984b3dc5fc, type: 3}
+    second: {fileID: 2800000, guid: 5ffacd3b39109fd4ba4a65a9b4ed96ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WBI_VR_Profile_01_1
+    second: {fileID: 2800000, guid: 6f563518450471041a3a7475251d6712, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0

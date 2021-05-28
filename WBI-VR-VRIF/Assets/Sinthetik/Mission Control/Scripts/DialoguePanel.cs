@@ -132,7 +132,7 @@ namespace Sinthetik.MissionControl
 
             if (currentModule.audioClip != null)
             {
-                Debug.Log("Dialogue AudioClip !- null");
+                //Debug.Log("Dialogue AudioClip !- null");
                 buttonOne.interactable = false;
                 if (hasChoice)
                     buttonTwo.interactable = false;
@@ -182,7 +182,7 @@ namespace Sinthetik.MissionControl
             }
             else
             {
-                Debug.Log("DialogueClose Invoked");
+                //Debug.Log("DialogueClose Invoked");
                 //buttonOne.onClick.RemoveAllListeners();
                 dialogueClose?.Invoke();
             }

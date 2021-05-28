@@ -247,7 +247,7 @@ namespace Sinthetik.MissionControl
             // the Instructional module also looks for activity complete so make sure this is an activity module
             if (currentModule.moduleType == Module.ModuleType.activity)
             {
-                Debug.Log("Activity Complete (From Mission)");
+                //Debug.Log("Activity Complete (From Mission)");
                 currentModule.CallExitEvent();
                 NextModule();
             }
@@ -309,7 +309,7 @@ namespace Sinthetik.MissionControl
 
         private void MenuComplete()
         {
-            Debug.Log("Menu Complete");
+            //Debug.Log("Menu Complete");
             NextModule();
         }
 
@@ -322,47 +322,47 @@ namespace Sinthetik.MissionControl
             // End of List: End of Game
             if (currentModuleList == endOfGameList && moduleCount == currentModuleList.Count - 1)
             {
-                Debug.Log("List = endOfGameList");
+                //Debug.Log("List = endOfGameList");
                 End();
             }
             // End of List: Custom Choice One
             else if (currentModuleList == customChoiceOneList && moduleCount == currentModuleList.Count - 1)
             {
                 // change this to move to a different part of the list
-                Debug.Log("List = customChoiceOneList");
+                //Debug.Log("List = customChoiceOneList");
                 End();
             }
             // End of List: Custom Choice Two
             else if (currentModuleList == customChoiceTwoList && moduleCount == currentModuleList.Count - 1)
             {
                 // change this to move to a different part of the list
-                Debug.Log("List = customChoiceTwoList");
+                //Debug.Log("List = customChoiceTwoList");
                 End();
             }
             // End of List: Section Success
             else if (currentModuleList == currentSection.successList && moduleCount == currentModuleList.Count - 1)
             {
-                Debug.Log("List = Section.successList");
+                //Debug.Log("List = Section.successList");
                 currentTask.isComplete = true;
                 NextSection();
             }
             // End of List: Section Fail
             else if (currentModuleList == currentSection.failList && moduleCount == currentModuleList.Count - 1)
             {
-                Debug.Log("List = Section.failList");
+                //Debug.Log("List = Section.failList");
                 NextSection();
             }
             // End of List: Task Success
             else if (currentModuleList == currentTask.successList && moduleCount == currentModuleList.Count - 1)
             {
-                Debug.Log("List = Task.successList");
+                //Debug.Log("List = Task.successList");
                 currentTask.isComplete = true;
                 NextTask();
             }
             // End of List: Task Fail
             else if (currentModuleList == currentTask.failList && moduleCount == currentModuleList.Count - 1)
             {
-                Debug.Log("List = Task.failList");
+                //Debug.Log("List = Task.failList");
                 NextTask();
             }
             // Any module list that isn't yet completed

@@ -15,6 +15,7 @@ public class CalibrateDial : MonoBehaviour
     Vector2 offsetVector;
     Vector2 finalVector;
     float startingOffset;
+    private Vector2 minPosValue, maxPosValue, minNegValue, maxNegValue;
 
     //public UnityEvent onDialCalibrated;
 
@@ -24,7 +25,16 @@ public class CalibrateDial : MonoBehaviour
         audio = GetComponent<AudioSource>();
         startingVector = rend.material.GetTextureOffset("_BaseMap");
         startingOffset = offsetVector.x;
-        Debug.Log(gameObject.name + " Offset: " + startingVector);
+        
+        minPosValue = posValue - new Vector2(0.1f, 0);
+        maxPosValue = posValue + new Vector2(0.1f, 0);
+        minNegValue = negValue - new Vector2(0.1f, 0);
+        maxNegValue = negValue + new Vector2(0.1f, 0);
+
+        Debug.Log("minPosValue = " + minPosValue);
+        Debug.Log("maxPosValue = " + maxPosValue);
+        Debug.Log("minNegValue = " + minNegValue);
+        Debug.Log("maxNegValue = " + maxNegValue);
     }
     public void UpdateDial(float dialValue)
     {
@@ -32,6 +42,12 @@ public class CalibrateDial : MonoBehaviour
         float roundedValue = Mathf.Round(dialValue * 100.0f) * 0.01f;
         offsetVector = new Vector2(roundedValue, 0);
         finalVector = startingVector + offsetVector;
+
+        if (finalVector.x > minNegValue.x && finalVector.x < maxNegValue.x)
+            finalVector = negValue;
+        if (finalVector.x > minPosValue.x && finalVector.x < maxPosValue.x)
+            finalVector = posValue;
+
         rend.material.SetTextureOffset("_BaseMap", finalVector);
 
         if(finalVector == negValue || finalVector == posValue)
